@@ -5,52 +5,60 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+        base {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+            bindings = <
+&kp ESCAPE  &kp Q             &kp W        &kp E           &kp R           &kp T        &kp Y    &kp U            &kp I            &kp O        &kp P                      &kp LEFT_BRACKET
+&kp TAB     &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D  &mt LEFT_GUI F  &kp G        &kp H    &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L  &mt RIGHT_SHIFT SEMICOLON  &kp SQT
+&tog 3      &kp Z             &kp X        &kp C           &kp V           &kp B        &kp N    &kp M            &kp COMMA        &kp DOT      &kp NON_US_BACKSLASH       &kp RIGHT_BRACKET
+                                           &kp BACKSPACE   &tog 1          &kp SPACE    &kp RET  &tog 2           &kp DELETE
+            >;
         };
+
+        math {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                  &kp N6                 &kp N7     &kp N8     &kp N9     &kp N0     &none
+&trans  &trans    &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans     &trans     &trans     &kp CAPSLOCK
+&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp DOT                &kp COMMA  &kp CARET  &kp TILDE  &kp GRAVE  &none
+                             &trans        &trans     &trans                  &trans                 &trans     &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &kp AT_SIGN  &kp HASH       &kp NON_US_BACKSLASH  &kp LEFT_BRACE   &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp RIGHT_BRACE  &kp SLASH     &kp SEMICOLON  &kp SQT            &none
+&trans  &trans       &trans         &trans                &trans           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans           &trans        &trans         &trans             &kp CAPSLOCK
+&trans  &kp DOLLAR   &kp AMPERSAND  &kp PIPE              &kp EXCLAMATION  &kp LESS_THAN           &kp GREATER_THAN       &kp UNDERSCORE   &kp QUESTION  &kp COLON      &kp DOUBLE_QUOTES  &none
+                                    &trans                &trans           &trans                  &trans                 &trans           &trans
+            >;
+        };
+
+        system {
+            bindings = <
+&kp F1          &kp F2          &kp F3        &kp F4        &kp F5             &kp F6             &kp F7          &kp F8          &kp F9        &kp F10    &kp F11     &kp F12
+&bt BT_CLR_ALL  &kp C_PREVIOUS  &kp C_NEXT    &kp C_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &bl BL_DEC  &bl BL_INC
+&bt BT_CLR      &bt BT_SEL 4    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1       &bt BT_SEL 0       &none           &none           &none         &none      &none       &bl BL_TOG
+                                              &trans        &trans             &trans             &trans          &trans          &trans
+            >;
+        };
+    };
 };
