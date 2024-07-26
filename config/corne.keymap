@@ -62,8 +62,8 @@
             bindings = <
 &trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                  &kp N6                 &kp N7     &kp N8     &kp N9     &kp N0     &none
 &trans  &trans    &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans     &trans     &trans     &kp CAPSLOCK
-&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp DOT                &kp COMMA  &kp CARET  &kp TILDE  &kp GRAVE  &none
-                             &trans        &trans     &trans                  &trans                 &trans     &trans
+&tog 0  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp DOT                &kp COMMA  &kp CARET  &kp TILDE  &kp GRAVE  &none
+                             &trans        &tog 0     &trans                  &trans                 &tog 0     &trans
             >;
         };
 
@@ -71,17 +71,17 @@
             bindings = <
 &trans  &kp AT_SIGN  &kp HASH       &kp NON_US_BACKSLASH  &kp LEFT_BRACE   &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp RIGHT_BRACE  &kp SLASH     &kp SEMICOLON  &kp SQT            &none
 &trans  &trans       &trans         &trans                &trans           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans           &trans        &trans         &trans             &kp CAPSLOCK
-&trans  &kp DOLLAR   &kp AMPERSAND  &kp PIPE              &kp EXCLAMATION  &kp LESS_THAN           &kp GREATER_THAN       &kp UNDERSCORE   &kp QUESTION  &kp COLON      &kp DOUBLE_QUOTES  &none
-                                    &trans                &trans           &trans                  &trans                 &trans           &trans
+&tog 0  &kp DOLLAR   &kp AMPERSAND  &kp PIPE              &kp EXCLAMATION  &kp LESS_THAN           &kp GREATER_THAN       &kp UNDERSCORE   &kp QUESTION  &kp COLON      &kp DOUBLE_QUOTES  &none
+                                    &trans                &tog 0           &trans                  &trans                 &tog 0           &trans
             >;
         };
 
         system {
             bindings = <
-&kp F1          &kp F2          &kp F3        &kp F4        &kp F5             &kp F6             &kp F7          &kp F8          &kp F9        &kp F10    &kp F11     &kp F12
-&bt BT_CLR_ALL  &kp C_PREVIOUS  &kp C_NEXT    &kp C_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &bl BL_DEC  &bl BL_INC
-&bt BT_CLR      &bt BT_SEL 4    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1       &bt BT_SEL 0       &none           &none           &none         &none      &none       &bl BL_TOG
-                                              &trans        &trans             &trans             &trans          &trans          &trans
+&kp F1  &kp F2          &kp F3        &kp F4        &kp F5             &kp F6             &kp F7          &kp F8          &kp F9        &kp F10     &kp F11     &kp F12
+&none   &kp C_PREVIOUS  &kp C_NEXT    &kp C_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &bl BL_DEC  &bl BL_INC
+&tog 0  &bt BT_SEL 4    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1       &bt BT_SEL 0       &bt BT_CLR      &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT  &none       &bl BL_TOG
+                                      &trans        &tog 0             &trans             &trans          &tog 0          &trans
             >;
         };
     };
