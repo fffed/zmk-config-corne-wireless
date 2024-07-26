@@ -10,6 +10,30 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        hml: homewrow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 39 40 41 11 23 35>;
+        };
+
+        hmr: homewrow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +45,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q             &kp W        &kp E           &kp R           &kp T        &kp Y    &kp U            &kp I            &kp O        &kp P                      &kp LEFT_BRACKET
-&kp TAB     &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D  &mt LEFT_GUI F  &kp G        &kp H    &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L  &mt RIGHT_SHIFT SEMICOLON  &kp SQT
-&tog 3      &kp Z             &kp X        &kp C           &kp V           &kp B        &kp N    &kp M            &kp COMMA        &kp DOT      &kp NON_US_BACKSLASH       &kp RIGHT_BRACKET
-                                           &kp BACKSPACE   &tog 1          &kp SPACE    &kp RET  &tog 2           &kp DELETE
+&kp ESCAPE  &kp Q              &kp W         &kp E            &kp R            &kp T        &kp Y    &kp U             &kp I             &kp O         &kp P                       &kp LEFT_BRACKET
+&kp TAB     &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G        &kp H    &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RCTRL L  &hmr RIGHT_SHIFT SEMICOLON  &kp SQT
+&tog 3      &kp Z              &kp X         &kp C            &kp V            &kp B        &kp N    &kp M             &kp COMMA         &kp DOT       &kp NON_US_BACKSLASH        &kp RIGHT_BRACKET
+                                             &kp BACKSPACE    &tog 1           &kp SPACE    &kp RET  &tog 2            &kp DELETE
             >;
         };
 
