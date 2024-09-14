@@ -60,9 +60,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                  &kp N6                 &kp N7     &kp N8    &kp N9               &kp N0     &none
-&trans  &trans    &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans    &trans               &trans     &kp CAPSLOCK
-&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp CARET              &kp TILDE  &kp INT6  &kp INTERNATIONAL_7  &kp GRAVE  &none
+&trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                  &kp N6                 &kp N7     &kp N8        &kp N9        &kp N0     &none
+&trans  &trans    &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans        &trans        &trans     &kp CAPSLOCK
+&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp CARET              &kp TILDE  &kp NUMBER_6  &kp NUMBER_7  &kp GRAVE  &none
                              &trans        &trans     &trans                  &trans                 &trans     &trans
             >;
         };
