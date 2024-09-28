@@ -44,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q              &kp W         &kp E            &kp R            &kp T        &kp Y    &kp U             &kp I             &kp O         &kp P                       &kp LEFT_BRACKET
+&kp ESCAPE  &kp Q              &kp W         &kp E            &kp R            &kp T        &kp Y    &kp U             &kp I             &kp O         &kp P                       &mt RIGHT_BRACKET LEFT_BRACKET
 &kp DELETE  &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G        &kp H    &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RCTRL L  &hmr RIGHT_SHIFT SEMICOLON  &kp SQT
-&tog 3      &kp Z              &kp X         &kp C            &kp V            &kp B        &kp N    &kp M             &kp COMMA         &kp DOT       &kp NON_US_BACKSLASH        &kp RIGHT_BRACKET
-                                             &tog 1           &kp TAB          &kp SPACE    &kp RET  &kp BACKSPACE     &tog 2
+&mo 2       &kp Z              &kp X         &kp C            &kp V            &kp B        &kp N    &kp M             &kp COMMA         &kp DOT       &kp NON_US_BACKSLASH        &mo 2
+                                             &mo 1            &kp TAB          &kp SPACE    &kp RET  &kp BACKSPACE     &mo 1
             >;
         };
 
@@ -59,19 +59,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                  &kp N6                 &kp N7     &kp N8     &kp N9   &kp N0     &none
-&trans  &trans    &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans     &trans   &trans     &kp CAPSLOCK
-&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL               &kp CARET              &kp TILDE  &kp COMMA  &kp DOT  &kp GRAVE  &none
-                             &trans        &trans     &trans                  &trans                 &trans     &trans
-            >;
-        };
-
-        symbols {
-            bindings = <
-&trans  &kp AT_SIGN  &kp HASH       &kp BACKSLASH  &kp LEFT_BRACE   &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp RIGHT_BRACE  &kp SLASH       &kp SINGLE_QUOTE   &kp SEMICOLON  &none
-&trans  &trans       &trans         &trans         &trans           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans           &trans          &trans             &trans         &kp CAPSLOCK
-&trans  &kp DOLLAR   &kp AMPERSAND  &kp PIPE       &kp EXCLAMATION  &kp LESS_THAN           &kp GREATER_THAN       &kp QUESTION     &kp UNDERSCORE  &kp DOUBLE_QUOTES  &kp COLON      &none
-                                    &trans         &trans           &trans                  &trans                 &trans           &trans
+&none  &kp N1                     &kp N2                   &kp N3                    &kp N4                          &kp N5    &kp N6  &kp N7                            &kp N8                      &kp N9                    &kp N0                   &none
+&none  &hml LEFT_SHIFT LESS_THAN  &hml LCTRL LEFT_BRACKET  &hml LEFT_ALT LEFT_BRACE  &hml LEFT_GUI LEFT_PARENTHESIS  &none     &none   &hmr RIGHT_GUI RIGHT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_BRACE  &hmr RCTRL RIGHT_BRACKET  &hmr RSHFT GREATER_THAN  &none
+&none  &kp SLASH                  &kp ASTRK                &kp MINUS                 &kp EQUAL                       &none     &none   &kp GRAVE                         &kp COMMA                   &kp DOT                   &kp BACKSLASH            &none
+                                                           &trans                    &trans                          &trans    &trans  &trans                            &trans
             >;
         };
 
